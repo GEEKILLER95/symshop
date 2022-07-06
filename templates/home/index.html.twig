@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Bienvenue sur SYMSHOP {% endblock %}
+
+{% block body %}
+
+    {% include "_incs/_slider.html.twig" %}
+
+    <div class="container pt-3">
+    
+        <div class="p-5 bg-light">
+                <h1 class="display-3">Bienvenue sur SYMSHOP</h1>
+                <p class="lead">Nos nouveaux composants aux meilleurs prix</p>
+                <hr class="my-2">
+                <p>Voir nos produits</p>
+                <p class="lead">
+                    <a class="btn btn-primary btn-lg" href="" role="button">Boutique</a>
+                </p>
+        </div>
+
+        <div class="row py-5 rounded gap-2 justify-content-center">
+
+            <div class="col-3 col-lg-3 col-sm-12 bg-success text-white text-center">
+                <i class="fa-solid fa-lock fa-2x py-2"></i>
+                <p class="text-center text-white">Produits qualités</p>
+            </div>
+
+            <div class="col-3 col-lg-3 col-sm-12 bg-warning text-white text-center">
+                <i class="fa-solid fa-check fa-2x py-2"></i>
+                <p class="text-center text-white">Moyens paiements</p>
+            </div>
+
+            <div class="col-3 col-lg-3 col-sm-12 bg-info text-white text-center">
+                <i class="fa-solid fa-truck fa-2x py-2"></i>
+                <p class="text-center text-white">Livraison rapide</p>
+            </div>
+
+            <section class="text-center my-5">
+            
+                <p class="text-center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam illum, magni saepe aspernatur blanditiis sint? Adipisci totam quas eius. Veritatis ipsa vel dicta molestiae sunt adipisci est necessitatibus fugit recusandae?
+                Repudiandae dicta, saepe numquam quae dolorem enim, assumenda perferendis quaerat tempora quibusdam adipisci architecto obcaecati asperiores sequi ab quia fugit nemo cum consectetur. In, reprehenderit dignissimos. Dicta perspiciatis id nobis?</p>
+            
+            </section>
+        
+        </div>
+    
+    </div>
+
+{% endblock %}
