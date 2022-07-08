@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tous nos composants
+{% endblock %}
+
+{% block body %}
+
+
+	<div class="album py-5 bg-light">
+		<div class="container">
+
+			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+				{% for produit in produits %}
+
+					<div class="col">
+						<div class="card shadow-sm">
+                            <img src="{{ produit.image }}" class="img-fluid" alt="">
+							<div class="card-body">
+                                <h3 class="title text-center p-1">{{ produit.nom }}</h3>
+								<p class="card-text">{{ produit.description }} This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                                <hr>
+                                <p class="text-center fs-2 fw-bold">{{ produit.prix }}€</p>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="btn-group gap-1">
+										<a type="button" class="btn btn-sm btn-outline-secondary" href="{{ path('app_detail_produit', {'id': produit.id}) }}">Voir</a>
+										<button type="button" class="btn btn-sm btn-success">Ajouter</button>
+									</div>
+									<small class="text-muted fst-italic ps-2 fs-6">{{ produit.categorie.nom }}</small>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				{% endfor %}
+			</div>
+
+		</div>
+
+	</div>
+
+
+{% endblock %}
