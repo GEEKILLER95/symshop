@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BACKOFFICE{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+    
+        <h1 class="display-4 text-center text-white bg-primary shadow-lg my-4 mx-auto col-md-9 col-lg-8">Bienvenue dans le BACKOFFICE</h1>
+
+        <div class="row justify-content-center">
+
+            <ul class="list-group text-center my-2">
+                <li class="list-group-item">
+                    <a href="{{ path("app_admin_produits")}}" class="btn btn-primary">GESTION DES PRODUITS</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="" class="btn btn-primary">GESTION DES CATEGORIES</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="" class="btn btn-primary">GESTION DES MEMBRES</a>
+                </li>
+                <li class="list-group-item">
+                    <a href="" class="btn btn-primary">GESTION DES COMMENTAIRES</a>
+                </li>
+            </ul>
+        
+        </div>
+    
+    </div>
+
+{% endblock %}
