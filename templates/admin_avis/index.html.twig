@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}BACKOFFICE - Gestion des avis{% endblock %}
+
+{% block body %}
+
+    <h1 class="display-4 text-center text-white bg-primary col-md-7 mx-auto my-5">BACKOFFICE - Gestion des avis</h1>
+
+    <div style="max-height:50vh; overflow:auto;" class="container">
+
+        {% for a in avis %}
+
+            <div class="col-md-10 mx-auto p-4">
+                <h5 class="text-center">Avis du produit : {{ a.produit.nom }} id: {{ a.produit.id }}</h5>
+                <span>
+                    <strong>{{ a.auteur }}</strong>
+                </span>
+                <small class="fs-italic">Posté le {{ a.createdAt|date('d/m/Y') }} à {{ a.createdAt|date('H:i:s') }}</small>
+            </div>
+            <p class="text-center">{{ a.contenu }}</p>
+            <div class="text-center">
+                <a href="{{ path( 'app_admin_avis_edit', {'id' : a.id} ) }}" class="btn btn-sm btn-warning"><i class="fa-solid fa-pen"></i></a>
+                <a href="{{ path( 'app_admin_avis_detail', {'id' : a.id} ) }}" class="btn btn-sm btn-info"><i class="fa-solid fa-eye"></i></a>
+                <a href="{{ path( 'app_admin_avis_del', {'id' : a.id} ) }}" onclick="return confirm('Etes vous sûr de vouloir supprimer cet avis ?')" class="btn btn-sm btn-danger"><i class="fa-solid fa-trash"></i></a>
+            </div>
+            <hr>
+                    
+        {% endfor %}
+    
+    </div>
+
+    <div class="text-center mx-auto my-3">
+        <a href="{{ path('app_admin') }}" class="btn btn-sm btn-primary">Accueil Backoffice</a>
+    </div>
+
+{% endblock %}
