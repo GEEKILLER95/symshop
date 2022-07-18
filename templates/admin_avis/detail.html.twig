@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Detail de l'avis {{ avis.id }}{% endblock %}
+
+{% block body %}
+
+    <div style="max-height:50vh; overflow:auto;" class="container">
+
+            <div class="col-md-10 mx-auto p-4">
+                <h5 class="text-center">Avis du produit : {{ avis.produit.nom }} id: {{ avis.produit.id }}</h5>
+                <span>
+                    <strong>{{ avis.auteur }}</strong>
+                </span>
+                <small class="fs-italic">Posté le {{ avis.createdAt|date('d/m/Y') }} à {{ avis.createdAt|date('H:i:s') }} avis id n° {{ avis.id }}</small>
+            </div>
+            <p class="text-center">{{ avis.contenu }}</p>
+            <div class="text-center">
+                <a href="{{ path('app_admin_avis') }}" class="btn btn-sm btn-primary">Retour</a>
+            </div>
+            <hr>
+    
+    </div>
+
+{% endblock %}

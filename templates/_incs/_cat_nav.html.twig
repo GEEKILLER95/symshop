@@ -1,10 +1,11 @@
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Catégorie de produit</a>
     <div class="dropdown-menu">
+    <a class="dropdown-item" href="{{ path("app_categories") }}">Toutes les catégories de produits</a>
 
-        {% for cat in categories.findAll() %}
+        {% for cat in categories_g.findAll() %}
 
-            <a class="dropdown-item" href="#">{{ cat.nom }}</a>
+            <a class="dropdown-item" href="{{ path("app_categorie_produits", {'id': cat.id} ) }}">{{ cat.nom }}</a>
             
         {% endfor %}
 

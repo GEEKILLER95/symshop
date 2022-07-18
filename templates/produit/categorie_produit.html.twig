@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Tous nos composants{% endblock %}
+{% block title %}Tous les produits de la catégorie{% endblock %}
 
 {% block body %}
 
@@ -10,7 +10,7 @@
 
 			<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
-				{% for produit in produits %}
+				{% for produit in categorie.produits %}
 
 					<div class="col">
 						<div class="card shadow-sm">
